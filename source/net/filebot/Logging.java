@@ -123,7 +123,7 @@ public final class Logging {
 
 	public static String getMessage(Object m, Throwable t) {
 		// try to unravel stacked exceptions
-		if (t.getCause() != null && (t instanceof RuntimeException || t instanceof ExecutionException)) {
+		if (t.getCause() != null && (t instanceof RuntimeException || t instanceof java.util.concurrent.ExecutionException || t instanceof java.lang.reflect.InvocationTargetException)) {
 			return getMessage(m, t.getCause());
 		}
 

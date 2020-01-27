@@ -180,8 +180,11 @@ public class License {
 			License license = parseLicenseText(psm, true).check();
 
 			// write to default license file path
-			Files.write(License.FILE.get().toPath(), psm.getBytes(UTF_8));
+			// Files.write(License.FILE.get().toPath(), psm.getBytes(UTF_8));
+			File file = License.FILE.get();
 
+			Logging.log.config(Logging.format("Write [%s] to [%s]", new Object[] { license, file }));
+			Files.write(file.toPath(), psm.getBytes(UTF_8));
 			// clear memoized instance and reload on next access
 			License.INSTANCE.clear();
 

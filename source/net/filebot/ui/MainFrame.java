@@ -133,15 +133,15 @@ public class MainFrame extends JFrame {
 		SwingEventBus.getInstance().register(this);
 	}
 
-	@Subscribe
-	public void updateLicense(LicenseModel licence) {
-		try {
-			licence.check();
-			setTitle(getWindowTitle());
-		} catch (Throwable e) {
-			setTitle(String.format("%s (%s)", getWindowTitle(), e.getMessage()));
-		}
-	}
+	// @Subscribe
+	// public void updateLicense(LicenseModel licence) {
+	// 	try {
+	// 		licence.check();
+	// 		setTitle(getWindowTitle());
+	// 	} catch (Throwable e) {
+	// 		setTitle(String.format("%s (%s)", getWindowTitle(), e.getMessage()));
+	// 	}
+	// }
 
 	@Subscribe
 	public void selectPanel(PanelBuilder panel) {

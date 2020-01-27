@@ -585,9 +585,9 @@ public class CmdlineOperations implements CmdlineInterface {
 		}
 
 		// allow --action test for evaluation purposes
-		if (renameAction != StandardRenameAction.TEST) {
+		// if (renameAction != StandardRenameAction.TEST) {
 			//LICENSE.check();
-		}
+		// }
 
 		// rename files
 		Map<File, File> renameLog = new LinkedHashMap<File, File>();

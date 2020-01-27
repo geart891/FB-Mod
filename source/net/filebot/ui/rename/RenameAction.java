@@ -96,7 +96,7 @@ class RenameAction extends AbstractAction {
 			// start processing
 			Map<File, File> renameLog = new LinkedHashMap<File, File>();
 
-			//try {
+			try {
 				// require valid license for rename mode
 				//LICENSE.check();
 
@@ -117,12 +117,12 @@ class RenameAction extends AbstractAction {
 					createLicensePopup(e.getMessage(), evt).show(source, -3, source.getHeight() + 4);
 				} else {
 					log.severe(e::getMessage);
-				}
+				}*/
 			} catch (CancellationException e) {
 				debug.finest(e::toString);
 			} catch (Throwable e) {
 				log.log(Level.SEVERE, e, cause(getRootCause(e)));
-			}*/
+			}
 
 			// abort if nothing happened
 			if (renameLog.isEmpty()) {
